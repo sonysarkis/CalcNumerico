@@ -29,7 +29,26 @@ class Persona:
             print(f"{self.nombre} no es mayor de edad")   
 
 
-# Creamos el objeto y le asignamos los valores
-person1 = Persona("Alejandra", 19, "31268878")
-person1.mostrarDatos()
-person1.mayor()
+# Crearemos una clase para generar una lista, para trabajar con varios objetos en vez de uno solo.
+class generarPers():
+    listaPersonas = []
+    def __init__(self, lista):
+        self.listaPersonas = lista
+
+    # Creamos una funcion para la lista diciendo quien es mayor y quien no.
+    def mostrarLista(self):
+        for Persona in self.listaPersonas:
+            if Persona.mayor():
+                Persona.getNombre()
+
+# Creamos objeto
+conjuntoPers = generarPers([
+    Persona("Sony", 19, 31276865),
+    Persona("Alex", 16, 16276595),
+    Persona("Alejandro", 24, 25768565),
+    Persona("Mario", 13, 19257368),
+    Persona("Carolina", 29, 17968565)
+
+])
+# Mostramos la lista 
+conjuntoPers.mostrarLista()
