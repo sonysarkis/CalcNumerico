@@ -25,6 +25,7 @@ def decimal_a_cualquiera(n,c):
 op = int(input("""
             Presione [1] para ingresar un número binario.
             Presione [2] para ingresar un número decimal.
+            Presione [3] para ingresar un número terciario. 
             Ingrese su opción numérica:   """))
 
 if op == 1:     
@@ -44,10 +45,12 @@ if op == 1:
     # Inicializamos c=8 para que 8 sea el divisor y poder obtener el número octal
     print(f"{numero_binario} en octal es: {decimal_a_cualquiera(todo_a_decimal(numero_binario),c=8)}")
     # Inicializamos c=16 para que 16 sea el divisor y poder obtener el número hexadecimal
-    print(f"{numero_binario} en hexa es: {decimal_a_cualquiera(todo_a_decimal(numero_binario),c=16)}")
+    print(f"{numero_binario} en hexadecimal es: {decimal_a_cualquiera(todo_a_decimal(numero_binario),c=16)}")
 
 if op == 2:
     
+
+
     numero_decimal = int(input("Ingrese un número decimal: "))
     # Inicializamos c=2 para que 2 sea el divisor y poder obtener el número binario
     print(f"{numero_decimal} en binario es: {decimal_a_cualquiera(numero_decimal, c=2)}")
@@ -64,3 +67,23 @@ if op == 2:
     # Inicializamos c=16 para que 16 sea el divisor y poder obtener el número hexadecimal
     print(f"{numero_decimal} en hexadecimal es: {decimal_a_cualquiera(numero_decimal, c=16)}")
 
+if op == 3:
+    # Método para convertir de terciario a decimal
+    def todo_a_decimal(num,c=3): # Inicializamos c=3 porque queremos convertir de terciario a decimal
+        if len(num) == 1:
+            return int(num)
+        return c * todo_a_decimal(num[:-1]) + int(num[-1])
+    
+    # Input del número terciario a convertir
+    numero_terciario = input("Ingrese un número terciario: ")
+
+    # Inicializamos c=2 para que 2 sea el divisor y poder obtener el número binario
+    print(f"{numero_terciario} en binario es: {decimal_a_cualquiera(todo_a_decimal(numero_terciario),c=2)}")
+    # Inicializamos c=4 para que 4 sea el divisor y poder obtener el número cuarternario
+    print(f"{numero_terciario} en cuarternario es: {decimal_a_cualquiera(todo_a_decimal(numero_terciario),c=4)}")
+    # Inicializamos c=3 para que 3 sea el divisor y poder obtener el número terciario
+    print(f"{numero_terciario} en decimal es: {todo_a_decimal(numero_terciario)}")
+    # Inicializamos c=8 para que 8 sea el divisor y poder obtener el número octal
+    print(f"{numero_terciario} en octal es: {decimal_a_cualquiera(todo_a_decimal(numero_terciario),c=8)}")
+    # Inicializamos c=16 para que 16 sea el divisor y poder obtener el número hexadecimal
+    print(f"{numero_terciario} en hexadecimal es: {decimal_a_cualquiera(todo_a_decimal(numero_terciario),c=16)}")
