@@ -32,8 +32,6 @@ def decimal_a_cualquiera(n,c):
                                                        # Se divide n entre c y se obtiene el cociente y el residuo de la división
                                         # El residuo se traduce a su correspondiente letra en hexadecimal (en caso de ser mayor a 9) y se concatena con el cociente
                                                        
-
-
 op = int(input("""
             Presione [1] para ingresar un número binario.
             Presione [2] para ingresar un número decimal.
