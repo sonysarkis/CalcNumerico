@@ -11,6 +11,8 @@ import numpy as np
 # Funcion principal 
 def main(page: ft.Page):
     page.title = "Sony Gómez - Proyecto 1"
+    page.theme_mode = ft.ThemeMode.LIGHT
+    titulo = ft.Text("                                                                                                GAUSS SEIDEL", style=ft.TextStyle(size=20))
    
     
     # Input matriz nxn y el vector nx1 en un campo de texto
@@ -185,7 +187,7 @@ def main(page: ft.Page):
     
     
     # Añadimos elementos a la página
-    page.add(label_matriz, label_vector,  Button_procesar, Button_aleatorio,Button_limpiar,result)
+    page.add(titulo, label_matriz, label_vector,  Button_procesar, Button_aleatorio,Button_limpiar,result)
     
    
 
